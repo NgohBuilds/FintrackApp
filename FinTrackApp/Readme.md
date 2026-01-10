@@ -30,19 +30,21 @@ This project emphasizes:
 
 ## Screenshots
 
-> Screenshots reflect the MVP stage (functionality-first approach).
+> Screenshots reflect the MVP stage (functionality-first approach and mobile-first).
 
 ### Dashboard
 
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard]()
 
 ### Transactions Management
 
-![Transactions List](./screenshots/transactions-list.png)
+![Transactions List Empty](./screenshots/MVP/1finTrackWelcomePage_mobile.png)
+![Transactions List](./screenshots/MVP/4FintrackwelcomeFull.png)
 
 ### Add / Edit Transaction
 
-![Transaction Form](./screenshots/transaction-form.png)
+![Transaction Form Add](./screenshots/MVP/3FintrackForm_filled.png)
+![Transaction Form Edit](./screenshots/MVP/5.fintrackEdittransaction.png)
 
 ---
 
@@ -55,7 +57,6 @@ This project emphasizes:
 - **Charts** – Chart.js or ApexCharts (planned)
 
 ---
-
 
 > This separation improves maintainability and scalability.
 
@@ -101,4 +102,5 @@ This project emphasizes:
 ---
 
 ## Getting Started
-[!link.com]
+
+![link]()
