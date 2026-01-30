@@ -32,9 +32,11 @@ This project emphasizes:
 
 > Screenshots reflect the MVP stage (functionality-first approach and mobile-first).
 
+
+
 ### Dashboard
 
-![Dashboard]()
+![Dashboard](./)
 
 ### Transactions Management
 
