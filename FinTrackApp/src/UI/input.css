@@ -13,5 +13,13 @@ Personnal Styling
 
 }
 .card>*{
+    font-weight: ;
+}
+.card>*:first-child{
+    font-size: 14px;
     font-weight: bold;
+}
+.card>*:first-child+span{
+    font-size: 1.5rem;
+    font-weight: bolder;
 }
