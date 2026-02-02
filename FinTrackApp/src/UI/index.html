@@ -4,10 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>FintrackAPP</title>
+
 </head>
-<body>
-    <h1 class=" text-2xl text-amber-200 pl-5">Je fais du texte</h1>
+<body class="h-screen">
+    <header class="h-1/12 w-full  border-b border-b-blue-50">
+        <div class="h-full flex items-center ml-3">
+            <img src="../../Image_Logo/porte-monnaie (1).png" alt="Logo Fintracker"
+            class="size-8">
+            <span class="text-xl ml-1 font-semibold">FinTracker</span>
+        </div>
+    </header>
+    <main class="h-full py-[5%] flex flex-col items-center justify-between">
+  
+        <div class="Header  w-full">
+                  <div class="text-center">
+            <h1 class="text-gray-500  text-sm font-semibold">Total Balance</h1>
+            <span class="amount_total text-4xl font-bold">$0.00</span>
+        </div>
+        <div class="flex justify-between px-4 border-green-300" >
+            <div class="card  bg-green-100">
+            <span class="Income text-green-600">Income</span>
+            <span class="Income_amount text-green-600">$0.00</span>
+        </div>
+        <div class="card bg-red-100">
+            <span class="Expenses text-red-900">Expenses</span>
+            <span class="Expenses_amount text-red-900">$0.00</span>
+        </div>
+        </div>
+        </div>
+        <div class="middle">
+            <img src="../../Image_Logo/porte-monnaie (1).png" alt="Wallet Money" class="size-1/5  object-contain">
+            <p class=" text-gray-500 font-semibold text-center">No transactions yet. <br>Add your first one below.
+    </p>
+        </div>
+    <button class="bg-blue-500 text-white w-1/2 rounded-4xl px-1.5 py-5 font-semibold">
+    <i class="fa-regular fa-plus fa-xl " style="color: #ffffff;"></i>
+        Add Transaction
+        
+    </button>
+ </main>
+    
+
     <script src="../main.js"></script>
 </body>
 </html>
