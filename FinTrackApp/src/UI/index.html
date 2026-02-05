@@ -44,19 +44,20 @@
     </button>
 
     <!-- Hidden Modale-->
-     <dialog class="px-[2%] py-[5%] flex flex-col absolute left-1/2  bg-amber-300  bottom-0 -translate-1/2 w-[90%]  h-10/12">
-        <div class="dialog_title flex flex-1 justify-between">
-            <span>Add Transaction</span>
-            <i class="fa-solid fa-xmark" style="color: #c9c9c9;"></i>
+     <dialog class=" hidden ">
+        <div class="dialog_title flex  justify-between">
+            <span class="font-bold ">Add Transaction</span>
+            <i class="fa-solid fa-xmark" style="color: #636161;"></i>
         </div>
-        <form action="" class="flex flex-col flex-8 ">
+        <form action="" class="flex flex-col justify-between h-full ">
             <label for="amount">Amount</label>
             <input type="number" name="amount" id="amount" placeholder="$ 0.00">
-            <div class="Type">
-                <label for="button_Action">type</label>
-        
-                <input type="button" value="Income">
+            <div>
+                <label for="button_Action">Type</label>
+                <div class="button_income_expense font-bold  flex *:flex-1 ">
+                 <input type="button" value="Income">
                 <input type="button" value="Expense">
+                </div>
             </div>
             <label for="Category"></label>
             <select name="Category" id="Category">
@@ -66,7 +67,7 @@
             <input type="date" name="Date" id="Date">
             <label for="Description">Description (Optional)</label>
             <textarea name="Description" id="Description" maxlength="50" placeholder="Add  a note..."></textarea>
-            <button type="submit" class=" bg-blue-500 text-white w-1/2 rounded-4xl px-1.5 py-5 font-semibold shadow-xl">Save Transaction</button>
+            <button type="submit" class=" bg-blue-500 text-white  rounded-2xl px-1.5 py-3 font-semibold shadow-xl ">Save Transaction</button>
         </form>
      </dialog>
      
