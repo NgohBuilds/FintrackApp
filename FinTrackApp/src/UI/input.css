@@ -1,37 +1,31 @@
 @import "tailwindcss";
 /*
-Personnal Styling 
+  Card Income and expenses Styling 
 */
 
 .card{
-    @apply w-[48.5%] p-[5%] rounded-2xl flex flex-col;
-    
+    @apply w-[48.5%] p-[5%] rounded-2xl flex flex-col; 
 }
-/* .card>*{
-    font-weight: ;
-} */
 .card>*:first-child{
-  
     @apply text-[14px] font-bold
 }
 .card>*:first-child+span{
-
     @apply text-2xl font-bold
 }
 
 /*Dialog Layout  : 
     Dialog displays only when you click add Expenses or income 
 */
+
 #visible_Dialog{
     @apply px-[2%] py-[5%] flex  flex-col absolute left-1/2    bottom-0 -translate-x-1/2 w-[90%]  h-10/12  rounded-t-2xl
 }
-/*Styling Dialog Form */
+
+/*Dialog Form Styling  */
 
 form input , textarea , select{
     @apply border rounded-xl p-2 border-gray-500 focus:border-blue-500 focus:border-2;
 }
-
-
 form label {
     @apply font-medium  text-sm text-gray-500
 }
