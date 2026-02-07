@@ -17,7 +17,7 @@
     Dialog displays only when you click add Expenses or income 
 */
 
-#visible_Dialog{
+.visible_Dialog{
     @apply px-[2%] py-[5%] flex  flex-col absolute left-1/2    bottom-0 -translate-x-1/2 w-[90%]  h-10/12  rounded-t-2xl
 }
 
