@@ -16,3 +16,15 @@ closeForm(closeDialogBtn , dialog)
 form.addEventListener("submit" , (e)=>{
     e.preventDefault()
 })
+
+/**
+ * Date : 08/02/2026
+ * ----------------------------------------------------------------
+ * # First Session (04:00 - 06:30)
+ * 1. Refactoring close and open dialog (done)
+ * 2. Animation de popup dialog
+ * 
+ * # Second Session ()
+ * 1. Gestion des champs du formulaire (simplement avec le HTML)
+ * 2. Couleur des bouttons au clic (simplement avec event )
+ */

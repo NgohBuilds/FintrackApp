@@ -44,7 +44,7 @@
     </button>
 
     <!-- Hidden Modal-->
-     <dialog   class="hidden ">
+     <dialog>
         <div class="dialog_title flex  justify-between">
             <span class="font-bold ">Add Transaction</span>
             <i class="fa-solid fa-xmark" 
@@ -53,7 +53,7 @@
         </div>
         <form action="" class="flex flex-col justify-between h-full ">
             <label for="amount">Amount</label>
-            <input type="number" name="amount" id="amount" placeholder="$ 0.00">
+            <input type="number" name="amount" id="amount" placeholder="$ 0.00" required>
             <div>
                 <label for="button_Action">Type</label>
                 <div class="button_income_expense font-bold  flex *:flex-1 ">
@@ -62,18 +62,17 @@
                 </div>
             </div>
             <label for="Category"></label>
-            <select name="Category" id="Category">
-                <option value="Food"></option>
+            <select name="Category" id="Category" required>
+                <option value="Food">Food</option>
             </select>
             <label for="Date">Date</label>
             <input type="date" name="Date" id="Date">
             <label for="Description">Description (Optional)</label>
-            <textarea name="Description" id="Description" maxlength="50" placeholder="Add  a note..."></textarea>
+            <textarea name="Description" id="Description" maxlength="50" placeholder="Add a note..."></textarea>
             <button id="submitBtn" type="submit" class=" bg-blue-500 text-white  rounded-2xl px-1.5 py-3 font-semibold shadow-xl ">Save Transaction</button>
         </form>
      </dialog>
-     
-
+    
  </main>
     
 <!--

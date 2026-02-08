@@ -18,13 +18,21 @@
 */
 
 .visible_Dialog{
-    @apply px-[2%] py-[5%] flex  flex-col absolute left-1/2    bottom-0 -translate-x-1/2 w-[90%]  h-10/12  rounded-t-2xl
+    @apply absolute px-[2%] py-[5%] bottom-0 flex flex-col inset-x-[5%] w-full h-5/6  rounded-t-2xl;
 }
 
 /*Dialog Form Styling  */
+dialog{
+    @apply  backdrop:backdrop-blur-xs backdrop:backdrop-invert-25  
+}
 
+/*Form Styling*/
 form input , textarea , select{
-    @apply border rounded-xl p-2 border-gray-500 focus:border-blue-500 focus:border-2;
+    @apply border rounded-xl p-2 border-gray-500 ;
+}
+form input , textarea , select{
+    @apply focus:outline-blue-500 ;
+
 }
 form label {
     @apply font-medium  text-sm text-gray-500
@@ -32,3 +40,8 @@ form label {
 form input[type = "button"]{
     @apply py-2 rounded-xl bg-gray-200 m-1
 }
+
+
+/*
+Animation 
+*/
