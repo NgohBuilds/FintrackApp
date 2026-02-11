@@ -1,6 +1,6 @@
 import { closeForm } from "./LogicUI/closeButton.js";
 import { displayForm } from "./LogicUI/addTransButton.js";
-import { income_btn , expense_btn , changeColorClickedBtn } from "./LogicUI/form.js"; 
+import { income_btn , expense_btn } from "./LogicUI/form.js"; 
 import { addEventClick } from "./LogicUI/clickEvent.js";
 
 const transactionBtn = document.querySelector('#addTransactionBtn')
@@ -26,8 +26,9 @@ form.addEventListener("submit" , (e)=>{
  * 2. Animation de popup dialog
  * 
  * # Second Session ()
- * 1. Gestion des champs du formulaire (simplement avec le HTML)
- * 2. Couleur des bouttons au clic (simplement avec event )
+ * 1. Gestion des champs du formulaire (simplement avec le HTML) (done)
+ * 2. Couleur des bouttons au clic (simplement avec event ) (done)
+ * 3. Contenu des options (done)
  */
 
 /**

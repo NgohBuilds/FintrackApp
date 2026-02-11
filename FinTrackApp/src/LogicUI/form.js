@@ -3,12 +3,21 @@ export const expense_btn = document.querySelector('#Expense')
 export const textColor = "text-white"
 export const bgActiveIncomeBtn = "bg-green-500"
 export const bgActiveExpsensBtn = "bg-red-500"
+const optionForm = document.querySelectorAll('select option')
+
+const optionContent = {
+    "Income" : ["food", "Restau","freelance"]  ,
+    "Expense" : ["wedding" , "Bd" , "Trip"]
+ }
 const color_btn_transaction = {
     "IncomeColor" : {"textColor" :textColor ,"bgColor" :bgActiveIncomeBtn },
     "ExpenseColor" : {"textColor" : textColor ,"bgColor" : bgActiveExpsensBtn},
 }
 
-
+export function changeCategory(typeTrans)
+{
+    Array.from(optionForm).map((opt , index)  => opt.textContent = optionContent[typeTrans][index])
+}
 /**
  * Identify button Type (Income or Expense)
  */
