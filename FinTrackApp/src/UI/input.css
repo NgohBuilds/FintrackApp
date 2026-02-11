@@ -1,8 +1,12 @@
 @import "tailwindcss";
+
+@layer base{
+
+
+
 /*
   Card Income and expenses Styling 
 */
-
 .card{
     @apply w-[48.5%] p-[5%] rounded-2xl flex flex-col; 
 }
@@ -40,8 +44,19 @@ form label {
 form input[type = "button"]{
     @apply py-2 rounded-xl bg-gray-200 m-1
 }
+.incomeBtnActive{
+    @apply bg-green-500 
+}
+.expenseBtnActive{
+    @apply bg-red-500
+}
+.incomeBtnActive, .expenseBtnActive{
+    @apply text-white
+}
 
 
 /*
 Animation 
 */
+
+}
