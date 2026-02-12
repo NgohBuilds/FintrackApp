@@ -54,6 +54,10 @@ form input[type = "button"]{
     @apply text-white
 }
 
+form input[type = "number"] , form input[type = "date"]{
+    @apply invalid:outline-red-500 valid:outline-green-500
+}
+
 
 /*
 Animation 

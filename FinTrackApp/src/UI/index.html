@@ -51,9 +51,11 @@
             id="closeBtn"
             style="color: #636161;"></i>
         </div>
-        <form action="" class="flex flex-col justify-between h-full ">
-            <label for="amount">Amount</label>
-            <input type="number" name="amount" id="amount" placeholder="$ 0.00" required>
+        <form action="" class="flex flex-col justify-evenly h-full ">
+            <div class="number flex flex-col">
+                <label for="amount">Amount</label>
+                <input type="number" name="amount" id="amount" placeholder="$ 0.00" min="0" required>
+            </div>
             <div>
                 <label for="button_Action">Type</label>
                 <div class="button_income_expense font-bold  flex *:flex-1 ">
@@ -61,17 +63,17 @@
                 <input id="Expense" type="button" value="Expense" >
                 </div>
             </div>
-            <label for="Category"></label>
+            <label for="Category">Category</label>
             <select name="Category" id="Category" required>
                 <option value="Food">Food</option>
                 <option value="Food">Restau</option>
                 <option value="Food">Freelance</option>
             </select>
             <label for="Date">Date</label>
-            <input type="date" name="Date" id="Date">
+            <input type="date" name="Date" id="Date" required>
             <label for="Description">Description (Optional)</label>
             <textarea name="Description" id="Description" maxlength="50" placeholder="Add a note..."></textarea>
-            <button id="submitBtn" type="submit" class=" bg-blue-500 text-white  rounded-2xl px-1.5 py-3 font-semibold shadow-xl ">Save Transaction</button>
+            <button id="submitBtn" type="submit" class=" bg-blue-500 text-white  rounded-2xl px-1.5 py-3 font-semibold shadow-xl">Save Transaction</button>
         </form>
      </dialog>
     
