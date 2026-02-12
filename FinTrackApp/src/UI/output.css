@@ -19,6 +19,7 @@
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
@@ -37,7 +38,7 @@
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --radius-4xl: 2rem;
-    --blur-xs: 4px;
+    --blur-2xl: 40px;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -360,6 +361,11 @@
       flex: 1;
     }
   }
+  .backdrop\:bg-black {
+    &::backdrop {
+      background-color: var(--color-black);
+    }
+  }
 }
 @layer base {
   .card {
@@ -382,11 +388,10 @@
   }
   .visible_Dialog {
     position: absolute;
-    inset-inline: 5%;
     bottom: calc(var(--spacing) * 0);
     display: flex;
     height: calc(5/6 * 100%);
-    width: 100%;
+    width: 100vw;
     flex-direction: column;
     border-top-left-radius: var(--radius-2xl);
     border-top-right-radius: var(--radius-2xl);
@@ -394,13 +399,9 @@
     padding-block: 5%;
   }
   dialog {
+    width: 100vw;
     &::backdrop {
-      --tw-backdrop-blur: blur(var(--blur-xs));
-      -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-      backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    }
-    &::backdrop {
-      --tw-backdrop-invert: invert(25%);
+      --tw-backdrop-blur: blur(var(--blur-2xl));
       -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
       backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     }

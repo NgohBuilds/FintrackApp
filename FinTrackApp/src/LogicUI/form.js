@@ -63,12 +63,5 @@ export function isInputCorrect(){
     parseFloat(userInput) < 0 ?
     amountInput.insertAdjacentHTML('afterend',span) : amountInput.parentNode.removeChild(amountInput.parentNode.lastChild)
     
-    // if (parseFloat(userInput) < 0){
-    //     console.log("Issues ")
-    //     amountInput.insertAdjacentHTML('afterend',span)
-    // } 
-    // else {
-    //     amountInput.parentNode.removeChild(amountInput.parentNode.lastChild)
-    // }
 }
 

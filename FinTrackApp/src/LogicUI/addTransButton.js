@@ -1,6 +1,6 @@
 export function displayForm (button , dialog) {
     button.addEventListener ('click' , ()=> {
-        dialog.showModal()
+        dialog.show()
         dialog.classList.add("visible_Dialog")
         }
     )

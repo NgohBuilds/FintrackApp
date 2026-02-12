@@ -22,12 +22,12 @@
 */
 
 .visible_Dialog{
-    @apply absolute px-[2%] py-[5%] bottom-0 flex flex-col inset-x-[5%] w-full h-5/6  rounded-t-2xl;
+    @apply absolute px-[2%] py-[5%] bottom-0 flex flex-col  w-screen h-5/6  rounded-t-2xl;
 }
 
 /*Dialog Form Styling  */
 dialog{
-    @apply  backdrop:backdrop-blur-xs backdrop:backdrop-invert-25  
+    @apply  w-screen  backdrop:backdrop-blur-2xl
 }
 
 /*Form Styling*/

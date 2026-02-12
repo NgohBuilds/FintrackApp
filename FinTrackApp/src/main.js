@@ -14,7 +14,7 @@ closeForm(closeDialogBtn , dialog)
 /*
  Update line 16 ...
 */
-isInputCorrect()
+//isInputCorrect()
 form.addEventListener("submit" , (e)=>{
     e.preventDefault()
    
@@ -45,7 +45,7 @@ addEventClick(expense_btn , income_btn)
  * Date : 12/02/2026 - 13/02/2026
  * ----------------------------------------------------------------
  * # First Session :
- * 1. Input verification (Amount , Date) [In progress]
+ * 1. Input verification (Amount , Date) [HardHHHHHH]
  * 2. Handle dialog issues position
  * 3. Animation dialog
  * 
