@@ -26,8 +26,11 @@
 }
 
 /*Dialog Form Styling  */
-dialog{
-    @apply  w-screen  backdrop:backdrop-blur-2xl
+
+dialog[open]{
+    @apply translate-y-[25%] inset-x-[5%] h-[80%] lg:max-w-[320px] w-[90%] backdrop:backdrop-blur-xs backdrop:invert-25 ;
+    animation: scroll-up .5s ease-in ;
+
 }
 
 /*Form Styling*/
@@ -62,5 +65,17 @@ form input[type = "number"] , form input[type = "date"]{
 /*
 Animation 
 */
+
+@keyframes scroll-up {
+
+    0%{
+       transform: translateY(90%);
+    }
+    100%{
+        transform: translateY(0);
+
+    }  
+}
+
 
 }

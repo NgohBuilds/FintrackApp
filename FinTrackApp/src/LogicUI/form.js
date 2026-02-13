@@ -17,7 +17,12 @@ const color_btn_transaction = {
 
 export function changeCategory(typeTrans)
 {
-    Array.from(optionForm).map((opt , index)  => opt.textContent = optionContent[typeTrans][index])
+    Array.from(optionForm).map((opt , index)  =>
+        {
+        opt.value = optionContent[typeTrans][index]
+        opt.textContent = optionContent[typeTrans][index]
+        } 
+    )
 }
 /**
  * Identify button Type (Income or Expense)
