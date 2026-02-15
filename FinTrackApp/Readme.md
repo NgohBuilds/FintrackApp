@@ -71,7 +71,7 @@ This project emphasizes:
 | id         | UUID / Timestamp | Primary key             |
 | label      | String           | Transaction name        |
 | amount     | Number           | Income (+) / Expense (−)|
-| category   | String           | Category tag            |
+<!-- | category   | String           | Category tag            | -->
 | date       | ISO String       | Transaction date        |
 | createdAt  | Timestamp        | Technical sorting       |
 
