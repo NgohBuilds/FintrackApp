@@ -71,7 +71,7 @@ function displayTransactions() {
 
         transactions.forEach(tx => {
             const div = document.createElement("div");
-            div.className = "transaction-item bg-white shadow-md rounded-xl p-4 flex flex-col justify-between  mb-4";
+            div.className = "transaction-item bg-white shadow-md rounded-xl p-4  justify-between  mb-4";
             div.dataset.id = tx.id;
 
             // LEFT SIDE
@@ -79,30 +79,39 @@ function displayTransactions() {
             left.className = "transaction-left";
             left.innerHTML = `
             <div>
-                <div>
+                <div class = "flex gap">
                  <p class="font-bold category">${tx.category}</p>
                  <span class="font-bold category">${selectedType}</span>
                 </div>
-                <span class="text-sm text-gray-500 date">${tx.date}</span>
-
-               
+                <span class="text-sm text-gray-500 date ">${tx.date}</span>
             </div>
         
             `;
 
             // RIGHT SIDE
             const right = document.createElement("div");
-            right.className = "transaction-right flex items-center gap-3";
+            right.className = "transaction-right align flex items-center gap-3 ";
             right.innerHTML = `
                 <span class="${tx.type === "Income" ? "text-green-600" : "text-red-600"} font-bold">
                     $${tx.amount.toFixed(2)}
                 </span>
-                <button class="edit-btn text-blue-500"><i class="fa-solid fa-pen"></i></button>
-                <button class="delete-btn text-red-500"><i class="fa-solid fa-trash"></i></button>
-            `;
+                `
+            // BOTTOM SIDE
+            const bottom = document.createElement('div');
+            bottom.className = "flex flex-around";
+            bottom.innerHTML = `
+            <div class = "flex justify-between ">
+                <button class="edit-btn text-blue-500">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="delete-btn text-red-500">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>`
 
             div.appendChild(left);
             div.appendChild(right);
+            div.appendChild(bottom)
             transactionList.appendChild(div);
 
             // DELETE

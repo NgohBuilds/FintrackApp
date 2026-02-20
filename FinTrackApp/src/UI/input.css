@@ -8,7 +8,7 @@
   Card Income and expenses Styling 
 */
 .card{
-    @apply w-[48.5%] p-[5%] rounded-2xl flex flex-col; 
+    @apply w-[48.5%] p-[5%] rounded-2xl flex flex-col overflow-x-clip; 
 }
 .card>*:first-child{
     @apply text-[14px] font-bold
