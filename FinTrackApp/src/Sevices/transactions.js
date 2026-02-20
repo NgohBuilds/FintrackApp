@@ -1,88 +1,92 @@
-import { initDB } from "../DataBase/indexedDB.js";
-import { db } from "../DataBase/indexedDB.js";
+let db;
 
-function deleteTransaction(id) {
+function openDB(callback) {
+    const request = indexedDB.open("fintrackDB", 1);
 
-    if (!db) {
-        console.log("DB non initialisée !");
-        return;
-    }
+    request.onupgradeneeded = function (e) {
+        db = e.target.result;
 
-    let transaction = db.transaction("Transactions", "readwrite");
-    let store = transaction.objectStore("Transactions");
+        if (!db.objectStoreNames.contains("transactions")) {
+            const store = db.createObjectStore("transactions", {
+                keyPath: "id",
+                autoIncrement: true
+            });
 
-    let request = store.delete(id);
+            store.createIndex("type", "type", { unique: false });
+            store.createIndex("date", "date", { unique: false });
+        }
+    };
+
+    request.onsuccess = function (e) {
+        db = e.target.result;
+        console.log("DB connected");
+        if (callback) callback();
+    };
+
+    request.onerror = function () {
+        console.error("DB error");
+    };
+}
+
+function addTransaction(data, callback) {
+    if (!db) return console.error("DB not initialized");
+
+    const tx = db.transaction("transactions", "readwrite");
+    const store = tx.objectStore("transactions");
+
+    const request = store.add(data);
+
+    request.onsuccess = function (e) {
+        console.log("Transaction added");
+        if (callback) callback(e.target.result); // retourne l'id
+    };
+
+    request.onerror = function () {
+        console.error("Add failed");
+    };
+}
+
+function getAllTransactions(callback) {
+    if (!db) return console.error("DB not initialized");
+
+    const tx = db.transaction("transactions", "readonly");
+    const store = tx.objectStore("transactions");
+
+    const request = store.getAll();
 
     request.onsuccess = function () {
-        console.log("Transaction supprimée");
+        callback(request.result);
     };
 
     request.onerror = function () {
-        console.log("Erreur suppression");
+        console.error("Fetch failed");
     };
 }
 
-function updateTransaction(data) {
+function updateTransaction(id, newData, callback) {
+    const tx = db.transaction("transactions", "readwrite");
+    const store = tx.objectStore("transactions");
 
-    if (!db) {
-        console.log("DB non initialisée !");
-        return;
-    }
+    const getReq = store.get(id);
 
-    let transaction = db.transaction("Transactions", "readwrite");
-    let store = transaction.objectStore("Transactions");
+    getReq.onsuccess = function () {
+        const updated = { ...getReq.result, ...newData };
+        const updateReq = store.put(updated);
 
-    let request = store.put(data);
+        updateReq.onsuccess = function () {
+            console.log("Transaction updated");
+            if (callback) callback();
+        };
+    };
+}
+function deleteTransaction(id, callback) {
+    const tx = db.transaction("transactions", "readwrite");
+    const store = tx.objectStore("transactions");
+
+    const request = store.delete(id);
 
     request.onsuccess = function () {
-        console.log("Transaction mise à jour");
-    };
-
-    request.onerror = function () {
-        console.log("Erreur mise à jour");
-    };
-}
-
-export function addTransaction(data) {
-
-    if (!db) {
-        console.log("DB non initialisée !");
-        return;
-    }
-
-    let transaction = db.transaction("Transactions", "readwrite");
-    let store = transaction.objectStore("Transactions");
-
-    let request = store.add(data);
-
-    request.onsuccess = function (event) {
-        console.log("Transaction ajoutée avec succès");
-        console.log("ID généré :", event.target.result);
-    };
-
-    request.onerror = function () {
-        console.log("Erreur lors de l'ajout");
-    };
-}
-
-function getAllTransactions() {
-
-    if (!db) {
-        console.log("DB non initialisée !");
-        return;
-    }
-
-    let transaction = db.transaction("Transactions", "readonly");
-    let store = transaction.objectStore("Transactions");
-
-    let request = store.getAll();
-
-    request.onsuccess = function (event) {
-        let results = event.target.result;
-        console.log("Toutes les transactions :", results);
-    };
-
-    request.onerror = function () {
-        console.log("Erreur récupération");
+        console.log("Transaction deleted");
+        if (callback) callback();
     };
 }

@@ -1,11 +1,4 @@
-/**
- * 1. Create IdB ;(done)
- * 2. Create a function to add objectStore after user click on submit button ; (in progress)
- * 3. Create a function to show data in UI ;
- * 4. Create a function to delete objectStore  ;
- * 5. Create a function to update objectStore ;
- 
-*/
+
 export let db = null;
 
 export function initDB() {

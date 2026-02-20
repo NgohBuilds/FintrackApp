@@ -56,11 +56,9 @@ export function changeColorClickedBtn (btn){
 
 }
 
-/* Date : 12/02/2026 ------------------------------------------------ */
 
 /* Input validation*/
 const amountInput = document.querySelector("input[type ='number']")
-const dateInput = document.querySelector("input[type ='date']")
 /** Amount input */
 export function isInputCorrect(){
     let userInput = amountInput.value 
