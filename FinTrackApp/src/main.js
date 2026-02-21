@@ -68,49 +68,46 @@ function displayTransactions() {
         }
 
         emptyState.style.display = "none";
-
+        const title = document.createElement('div')
+        title.innerHTML =`<h1>Transaction</h1>`
         transactions.forEach(tx => {
             const div = document.createElement("div");
-            div.className = "transaction-item bg-white shadow-md rounded-xl p-4  justify-between  mb-4";
+            div.className = " bg-white shadow-md rounded-xl p-4  justify-between  mb-4 w-screen max-w-[640px]  border border-blue-300 ";
             div.dataset.id = tx.id;
 
-            // LEFT SIDE
-            const left = document.createElement("div");
-            left.className = "transaction-left";
-            left.innerHTML = `
-            <div>
+            // MIDDLE SIDE
+            const middle = document.createElement("div");
+            middle.className ="flex"
+            middle.innerHTML = `
+            <div class=" w-1/2">
                 <div class = "flex gap">
-                 <p class="font-bold category">${tx.category}</p>
-                 <span class="font-bold category">${selectedType}</span>
+                 <p class="font-bold text-xl category">${tx.category}</p>
+                 <span class="font-bold category ${tx.type ===  "Income" ? "text-green-600 bg-green-100" : "text-red-600 bg-red-100"} inline-block p-1 rounded-xl text-xs  ml-2">${tx.type}</span>
                 </div>
                 <span class="text-sm text-gray-500 date ">${tx.date}</span>
+                <p class=" text-sm sm:text-xl text-gray-500 font-semibold">${tx.description}</p>
             </div>
-        
-            `;
-
-            // RIGHT SIDE
-            const right = document.createElement("div");
-            right.className = "transaction-right align flex items-center gap-3 ";
-            right.innerHTML = `
-                <span class="${tx.type === "Income" ? "text-green-600" : "text-red-600"} font-bold">
+            <span class="text-center ${tx.type === "Income" ? "text-green-600" : "text-red-600"} font-bold inline-block ">
                     $${tx.amount.toFixed(2)}
-                </span>
-                `
+            </span>
+            `
+
             // BOTTOM SIDE
             const bottom = document.createElement('div');
-            bottom.className = "flex flex-around";
             bottom.innerHTML = `
-            <div class = "flex justify-between ">
-                <button class="edit-btn text-blue-500">
+            <hr class=" my-3  bg-blue-100">
+            <div class = "flex justify-between *:w-[45%]   *:rounded-xl *:p-3">
+                <button class="edit-btn text-blue-500 bg-blue-100">
                     <i class="fa-solid fa-pen"></i>
+                    Edit
                 </button>
-                <button class="delete-btn text-red-500">
+                <button class="delete-btn text-red-500 bg-red-100" >
                     <i class="fa-solid fa-trash"></i>
+                    Delete
                 </button>
             </div>`
 
-            div.appendChild(left);
-            div.appendChild(right);
+            div.appendChild(middle);
             div.appendChild(bottom)
             transactionList.appendChild(div);
 
@@ -133,7 +130,7 @@ function displayTransactions() {
 
 
 function populateForm(tx) {
-    // NE TOUCHER QUE LES VALEURS
+
     amount.value = tx.amount;
     label.value = tx.category;
     date.value = tx.date;
