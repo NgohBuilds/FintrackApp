@@ -47,8 +47,9 @@ function selectType(type) {
     }
 }
 
+
 function openForm() {
-    dialog.showModal(); // garde le layout
+    dialog.showModal(); 
 }
 
 // ================= INIT =================
